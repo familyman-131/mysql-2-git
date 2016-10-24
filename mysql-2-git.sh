@@ -4,6 +4,8 @@
 # where is the possibility of breaking is minimal
 # you only need to upload a mysql_dump.gz to "uploading" dir
 # after IN_CLOSE_WRITE event happened in "uploading" directory, script will start and make all magic
+# /path/to/dir/DB-repo/uploading/ IN_CLOSE_WRITE /path/to/db-to-repo.sh $#
+# $# - sends filename to script as ${INCRON_FILE_NAME}
 ###variables
 DATE=`date +%d-%m-%Y`
 TEMP_DIR="/path/to/dir/DB-repo/uploading/"
