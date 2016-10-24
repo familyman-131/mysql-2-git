@@ -59,14 +59,15 @@ db2repo () {
     breakline
     #git push
     echo "git push to remote repo"  >> ${TEMP_LOG}
+    res2log
     breakline
     cd ${REPO_DIR} && /usr/bin/git push
         if [ "$?" -eq 0 ]
         then
-            REPORT="adding ${DB_FILE_NAME} to ${BARE_REPO} SUCCESS"
+            REPORT="`date` adding ${DB_FILE_NAME} to ${BARE_REPO} SUCCESS"
             echo "${REPORT}"  >> ${TEMP_LOG}
         else
-            REPORT="adding ${DB_FILE_NAME} to ${BARE_REPO} ERROR"
+            REPORT="`date` adding ${DB_FILE_NAME} to ${BARE_REPO} ERROR"
             echo "${REPORT}"  >> ${TEMP_LOG}
         fi
     breakline
@@ -102,10 +103,10 @@ DEC_REP=$(echo "$?")
     then
         REPORT=".enc file has been decrypted SUCCESS"
         echo "${REPORT}"  >> ${TEMP_LOG}
-        echo "deleting unnesesarry keyfile from  ${UPLOADED_DIR} " >> ${TEMP_LOG}
+        echo "deleting unnesesarry ${KEY_FILE_NAME} from  ${UPLOADED_DIR} " >> ${TEMP_LOG}
         cd  ${UPLOADED_DIR}  && rm ${KEY_FILE_NAME} 
         res2log
-        echo "deleting unnesesarry encrypted file from  ${TEMP_DIR} " >> ${TEMP_LOG}
+        echo "deleting unnesesarry ${ENC_FILE_NAME} file from  ${TEMP_DIR} " >> ${TEMP_LOG}
         cd  ${TEMP_DIR}  && rm ${ENC_FILE_NAME}
         res2log
         breakline
