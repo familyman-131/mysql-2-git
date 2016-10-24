@@ -106,7 +106,7 @@ DEC_REP=$(echo "$?")
         echo "deleting unnesesarry ${KEY_FILE_NAME} from  ${UPLOADED_DIR} " >> ${TEMP_LOG}
         cd  ${UPLOADED_DIR}  && rm ${KEY_FILE_NAME} 
         res2log
-        echo "deleting unnesesarry ${ENC_FILE_NAME} file from  ${TEMP_DIR} " >> ${TEMP_LOG}
+        echo "deleting unnesesarry ${ENC_FILE_NAME} from  ${TEMP_DIR} " >> ${TEMP_LOG}
         cd  ${TEMP_DIR}  && rm ${ENC_FILE_NAME}
         res2log
         breakline
