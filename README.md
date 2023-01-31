@@ -15,4 +15,4 @@ incrontab must contain something like
 /path/to/dir/DB-repo/tmp/ IN_CLOSE_WRITE /path/to/db-to-repo.sh $#  
 where $# - sends filename to script as ${INCRON_FILE_NAME}
 
-P.S. its better to do mysqldump with  --skip-extended-insert, because we have more usefull diff in repository, like http://dl2.joxi.net/drive/2016/10/18/0002/2219/137387/87/70ff8a9183.jpg
+P.S. its better to do mysqldump with  --skip-extended-insert, because we have more usefull diff in repository
